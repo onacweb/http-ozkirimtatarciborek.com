@@ -1,0 +1,788 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Öz Kırım Tatar Çibörek ve Mantı Evi | Eskişehir</title>
+<meta name="description" content="ONAÇ Web; Kocaeli merkezli logo, kurumsal kimlik, web tasarımı, sosyal medya ve 3D görselleştirme stüdyosudur.">
+<meta name="theme-color" content="#0a0a0c">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:title" content="ONAÇ Web — Tasarım ve Marka Stüdyosu">
+<meta property="og:description" content="Markanızı görünür, güçlü ve unutulmaz kılan tasarım çözümleri.">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ONAÇ Web — Tasarım ve Marka Stüdyosu">
+<meta name="twitter:description" content="Logo, web, sosyal medya ve 3D tasarım çözümleri.">
+<link rel="icon" type="image/webp" href="assets/oz-kirim/oz-kirim-logo.webp">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================
+   ONAÇ — Premium Design Studio
+   Editorial luxury aesthetic, deep gold on charcoal
+   ============================================ */
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+
+:root{
+  --bg:#0a0a0c;
+  --bg2:#0e0e12;
+  --bg3:#14141a;
+  --gold:#b8962e;
+  --gold-light:#e0c050;
+  --gold-bright:#f0d470;
+  --gold-dark:#7a621a;
+  --gold-deep:#4a3c0e;
+  --gold-glow:rgba(184,150,46,0.25);
+  --gold-soft:rgba(184,150,46,0.08);
+  --text:#f0f0f2;
+  --text-dim:#8a8a92;
+  --text-faint:#4a4a52;
+  --border:rgba(255,255,255,0.06);
+  --border-gold:rgba(184,150,46,0.15);
+  --glass:rgba(255,255,255,0.025);
+  --radius:14px;
+  --radius-lg:20px;
+  --ease:cubic-bezier(0.22,1,0.36,1);
+  --ease-out:cubic-bezier(0.16,1,0.3,1);
+}
+
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+body{
+  font-family:'Inter',system-ui,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  overflow-x:hidden;
+  line-height:1.6;
+  font-weight:400;
+}
+h1,h2,h3,h4{font-family:'Syne','Inter',sans-serif;letter-spacing:-0.03em;line-height:1.05;font-weight:700}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+button{font-family:inherit;cursor:pointer;border:none;background:none;color:inherit}
+::selection{background:var(--gold);color:#000}
+::-webkit-scrollbar{width:5px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:#222;border-radius:3px}
+::-webkit-scrollbar-thumb:hover{background:var(--gold-dark)}
+
+/* Noise texture overlay */
+.noise{position:fixed;inset:0;z-index:9990;pointer-events:none;opacity:0.035;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+
+/* ============================================
+   LOADER
+   ============================================ */
+#loader{position:fixed;inset:0;z-index:10000;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s var(--ease),visibility 0.8s}
+#loader.done{opacity:0;visibility:hidden}
+.loader-mark{font-family:'Syne',sans-serif;font-size:32px;font-weight:800;letter-spacing:-0.04em;margin-bottom:28px;opacity:0;animation:fadeIn 0.8s 0.1s forwards}
+.loader-mark span{color:var(--gold)}
+.loader-bar-wrap{width:180px;height:1px;background:rgba(255,255,255,0.06);overflow:hidden}
+.loader-bar{height:100%;width:0;background:var(--gold);animation:loadFill 1.6s var(--ease) forwards}
+.loader-text{margin-top:14px;font-size:10px;letter-spacing:0.3em;text-transform:uppercase;color:var(--text-faint)}
+@keyframes loadFill{to{width:100%}}
+@keyframes fadeIn{to{opacity:1}}
+
+/* ============================================
+   CURSOR
+   ============================================ */
+.cursor-dot,.cursor-ring{position:fixed;top:0;left:0;pointer-events:none;z-index:9995;border-radius:50%;mix-blend-mode:difference}
+.cursor-dot{width:6px;height:6px;background:var(--gold-bright)}
+.cursor-ring{width:32px;height:32px;border:1px solid rgba(184,150,46,0.4);z-index:9994;transition:width 0.3s,height 0.3s,border-color 0.3s}
+.cursor-hovering .cursor-dot{width:12px;height:12px}
+.cursor-hovering .cursor-ring{width:48px;height:48px;border-color:rgba(184,150,46,0.7)}
+@media(hover:none),(pointer:coarse){.cursor-dot,.cursor-ring{display:none}}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar{position:fixed;top:0;left:0;right:0;z-index:100;transition:all 0.5s var(--ease)}
+.navbar.scrolled{background:rgba(10,10,12,0.8);backdrop-filter:blur(24px);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1320px;margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:72px;transition:height 0.4s}
+.navbar.scrolled .nav-inner{height:60px}
+.nav-logo{display:flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-size:22px;font-weight:800;letter-spacing:-0.03em}
+.nav-logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-dark));display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 4px 20px var(--gold-glow)}
+.nav-logo-mark::before{content:'';position:absolute;inset:1px;border-radius:9px;background:linear-gradient(135deg,rgba(255,255,255,0.15),transparent)}
+.nav-logo-mark svg{width:18px;height:18px;position:relative;z-index:1}
+.nav-logo span{color:var(--gold)}
+.nav-logo small{display:block;font-size:7px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-faint);font-weight:600;font-family:'Inter',sans-serif}
+.business-logo{width:72px;height:72px;border-radius:50%;object-fit:cover;object-position:center 44%;box-shadow:0 0 0 2px rgba(224,192,80,.35);background:#0a0a0c}
+.nav-links{display:flex;align-items:center;gap:36px}
+.nav-link{font-size:13px;font-weight:500;color:var(--text-dim);position:relative;transition:color 0.3s;letter-spacing:0.02em}
+.nav-link::after{content:'';position:absolute;bottom:-6px;left:0;width:0;height:1px;background:var(--gold);transition:width 0.4s var(--ease)}
+.nav-link:hover,.nav-link.active{color:var(--text)}
+.nav-link:hover::after,.nav-link.active::after{width:100%}
+.nav-cta{padding:10px 24px;font-size:13px;font-weight:600;color:#000;background:var(--gold);border-radius:100px;transition:all 0.3s var(--ease);letter-spacing:0.02em}
+.nav-cta:hover{background:var(--gold-bright);transform:translateY(-1px);box-shadow:0 6px 20px var(--gold-glow)}
+.nav-burger{display:none;flex-direction:column;gap:5px;padding:8px}
+.nav-burger span{width:20px;height:1.5px;background:var(--text);border-radius:2px;transition:all 0.3s}
+.nav-burger.open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-burger.open span:nth-child(2){opacity:0}
+.nav-burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+.nav-mobile{display:none;position:fixed;top:84px;left:16px;right:16px;z-index:99;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);padding:12px;flex-direction:column;gap:2px}
+.nav-mobile.open{display:flex}
+.nav-mobile a{padding:14px 18px;border-radius:10px;font-size:15px;font-weight:500;color:var(--text-dim);transition:all 0.2s}
+.nav-mobile a:hover{background:var(--glass);color:var(--text)}
+
+/* ============================================
+   SHARED
+   ============================================ */
+.container{max-width:1320px;margin:0 auto;padding:0 32px}
+.section{padding:120px 0;position:relative}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
+.eyebrow::before{content:'';width:24px;height:1px;background:var(--gold)}
+.sec-title{font-size:clamp(36px,5.5vw,64px);font-weight:700;margin-bottom:20px;letter-spacing:-0.03em}
+.sec-sub{font-size:17px;color:var(--text-dim);max-width:560px;line-height:1.7}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.visible{opacity:1;transform:translateY(0)}
+.reveal-d1{transition-delay:0.1s}
+.reveal-d2{transition-delay:0.2s}
+.reveal-d3{transition-delay:0.3s}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 32px;font-size:14px;font-weight:600;border-radius:100px;transition:all 0.4s var(--ease);cursor:pointer;letter-spacing:0.02em}
+.btn-gold{background:var(--gold);color:#000}
+.btn-gold:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 12px 40px var(--gold-glow)}
+.btn-ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-2px)}
+
+/* Gold text */
+.gold-text{color:var(--gold-light)}
+.gold-grad{background:linear-gradient(135deg,var(--gold-bright),var(--gold),var(--gold-dark));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+
+/* Glow orbs */
+.orb{position:absolute;border-radius:50%;filter:blur(100px);pointer-events:none}
+
+/* ============================================
+   HERO
+   ============================================ */
+.hero{min-height:100vh;display:flex;align-items:center;position:relative;overflow:hidden;padding-top:72px}
+.hero-bg{position:absolute;inset:0;background:
+  radial-gradient(ellipse at 70% 30%,rgba(184,150,46,0.08),transparent 50%),
+  radial-gradient(ellipse at 20% 80%,rgba(184,150,46,0.04),transparent 50%)}
+.hero-grid-lines{position:absolute;inset:0;background-image:
+  linear-gradient(rgba(255,255,255,0.015) 1px,transparent 1px),
+  linear-gradient(90deg,rgba(255,255,255,0.015) 1px,transparent 1px);
+  background-size:64px 64px;mask-image:radial-gradient(ellipse at center,black 30%,transparent 80%)}
+.hero-content{position:relative;max-width:1320px;margin:0 auto;padding:0 32px;width:100%;display:grid;grid-template-columns:1.1fr 0.9fr;gap:64px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:10px;padding:8px 16px;border-radius:100px;background:var(--glass);border:1px solid var(--border-gold);font-size:12px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold);margin-bottom:32px}
+.hero-eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 10px var(--gold);animation:pulse 2s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-size:clamp(44px,6.5vw,88px);font-weight:700;margin-bottom:28px;letter-spacing:-0.04em}
+.hero h1 .line{display:block;overflow:hidden}
+.hero h1 .line-inner{display:inline-block;animation:slideUp 1s var(--ease) forwards;opacity:0;transform:translateY(100%)}
+.hero h1 .line:nth-child(2) .line-inner{animation-delay:0.15s}
+.hero h1 .line:nth-child(3) .line-inner{animation-delay:0.3s}
+@keyframes slideUp{to{opacity:1;transform:translateY(0)}}
+.hero-lead{font-size:18px;color:var(--text-dim);max-width:500px;margin-bottom:40px;line-height:1.7}
+.hero-cta{display:flex;flex-wrap:wrap;gap:16px;margin-bottom:56px}
+.hero-trust{display:flex;align-items:center;gap:20px}
+.hero-avatars{display:flex}
+.hero-avatars img{width:44px;height:44px;border-radius:50%;border:2px solid var(--bg);object-fit:cover;margin-left:-14px;filter:grayscale(0.2)}
+.hero-avatars img:first-child{margin-left:0}
+.hero-trust-info .stars{display:flex;gap:2px;margin-bottom:2px}
+.hero-trust-info .stars span{color:var(--gold);font-size:14px}
+.hero-trust-info .text{font-size:13px;color:var(--text-faint)}
+.hero-trust-info .text strong{color:var(--text);font-weight:600}
+
+/* Hero visual */
+.hero-visual{position:relative}
+.hero-img-main{position:relative;border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 32px 80px rgba(0,0,0,0.6)}
+.hero-img-main img{width:100%;height:520px;object-fit:cover}
+.hero-img-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,0.9) 10%,transparent 40%)}
+.hero-badge-card{position:absolute;bottom:24px;left:24px;right:24px;padding:18px 20px;border-radius:var(--radius);background:rgba(20,20,26,0.8);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.08);display:flex;align-items:center;gap:14px}
+.hero-badge-icon{width:44px;height:44px;border-radius:12px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-dark));display:flex;align-items:center;justify-content:center;flex-shrink:0;box-shadow:0 4px 16px var(--gold-glow)}
+.hero-badge-icon svg{width:22px;height:22px}
+.hero-badge-text strong{display:block;font-size:14px;font-weight:600}
+.hero-badge-text small{font-size:12px;color:var(--text-dim)}
+.hero-float{position:absolute;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;box-shadow:0 12px 40px rgba(0,0,0,0.4)}
+.hero-float-1{top:-20px;right:-20px;width:88px;height:88px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-dark));animation:floatA 6s ease-in-out infinite}
+.hero-float-2{bottom:-16px;left:-16px;width:72px;height:72px;background:rgba(20,20,26,0.9);backdrop-filter:blur(12px);border:1px solid var(--border);animation:floatB 8s ease-in-out infinite}
+@keyframes floatA{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-16px) rotate(5deg)}}
+@keyframes floatB{0%,100%{transform:translateY(0)}50%{transform:translateY(12px)}}
+
+/* Scroll indicator */
+.scroll-ind{position:absolute;bottom:32px;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;opacity:0;animation:fadeIn 1s 1.5s forwards}
+.scroll-ind-text{font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-faint)}
+.scroll-ind-line{width:1px;height:32px;background:linear-gradient(to bottom,transparent,var(--gold),transparent);animation:scrollLine 2s ease-in-out infinite}
+@keyframes scrollLine{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform:scaleY(1);transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* ============================================
+   MARQUEE
+   ============================================ */
+.marquee{padding:32px 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden;background:var(--bg2)}
+.marquee-label{font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-faint);text-align:center;margin-bottom:20px}
+.marquee-track{display:flex;gap:56px;white-space:nowrap;animation:marquee 40s linear infinite;width:max-content}
+.marquee-item{font-family:'Syne',sans-serif;font-size:22px;font-weight:700;color:rgba(255,255,255,0.15);transition:color 0.4s;letter-spacing:-0.02em}
+.marquee-item:hover{color:var(--gold)}
+@keyframes marquee{to{transform:translateX(-50%)}}
+
+/* ============================================
+   STATS
+   ============================================ */
+.stats{padding:80px 0;border-bottom:1px solid var(--border)}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+.stat{text-align:center;padding:0 24px;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-num{font-family:'Syne',sans-serif;font-size:clamp(40px,4.5vw,56px);font-weight:700;letter-spacing:-0.03em;margin-bottom:4px}
+.stat-label{font-size:13px;color:var(--text-dim);letter-spacing:0.05em}
+
+/* ============================================
+   SERVICES — 3D TEXT + GLASS
+   ============================================ */
+.services{padding:120px 0;background:var(--bg2);border-bottom:1px solid var(--border)}
+.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.svc-card{padding:36px 32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--border);transition:all 0.5s var(--ease);position:relative;overflow:hidden}
+.svc-card::before{content:'';position:absolute;inset:0;border-radius:var(--radius-lg);padding:1px;background:linear-gradient(135deg,var(--gold-glow),transparent 50%);-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity 0.5s}
+.svc-card:hover{transform:translateY(-8px);background:linear-gradient(135deg,rgba(184,150,46,0.06),rgba(255,255,255,0.01))}
+.svc-card:hover::before{opacity:1}
+.svc-icon{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:24px;position:relative;transition:transform 0.4s var(--ease)}
+.svc-card:hover .svc-icon{transform:scale(1.08) translateY(-2px)}
+.svc-icon svg{width:26px;height:26px;position:relative;z-index:1}
+
+/* 3D TEXT — layered gold shadow */
+.svc-title{
+  font-family:'Syne',sans-serif;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:var(--text);
+  text-shadow:
+    0 1px 0 rgba(184,150,46,0.08),
+    0 2px 0 rgba(184,150,46,0.06),
+    0 3px 0 rgba(184,150,46,0.04),
+    0 4px 6px rgba(0,0,0,0.3);
+  transition:all 0.5s var(--ease);
+}
+.svc-card:hover .svc-title{
+  color:var(--gold-light);
+  text-shadow:
+    0 1px 0 rgba(224,192,80,0.25),
+    0 2px 0 rgba(184,150,46,0.2),
+    0 3px 0 rgba(122,98,26,0.15),
+    0 4px 0 rgba(122,98,26,0.1),
+    0 5px 12px rgba(0,0,0,0.4);
+  transform:translateY(-2px);
+}
+
+/* Poster/afiş variant — deeper 3D */
+.svc-title-poster{
+  font-family:'Syne',sans-serif;
+  font-size:22px;
+  font-weight:700;
+  margin-bottom:10px;
+  color:rgba(240,240,242,0.9);
+  text-shadow:
+    1px 1px 0 rgba(184,150,46,0.12),
+    2px 2px 0 rgba(184,150,46,0.1),
+    3px 3px 0 rgba(122,98,26,0.08),
+    4px 4px 0 rgba(122,98,26,0.06),
+    5px 5px 10px rgba(0,0,0,0.4);
+  transition:all 0.5s var(--ease);
+}
+.svc-card:hover .svc-title-poster{
+  color:var(--gold-bright);
+  text-shadow:
+    1px 1px 0 rgba(224,192,80,0.3),
+    2px 2px 0 rgba(184,150,46,0.25),
+    3px 3px 0 rgba(184,150,46,0.2),
+    4px 4px 0 rgba(122,98,26,0.15),
+    5px 5px 0 rgba(122,98,26,0.1),
+    6px 6px 18px rgba(0,0,0,0.5);
+  transform:perspective(500px) rotateX(6deg) translateY(-3px);
+}
+
+.svc-desc{font-size:14px;color:var(--text-dim);margin-bottom:20px;line-height:1.6}
+.svc-features{list-style:none;padding:0;margin:0 0 24px}
+.svc-features li{font-size:13px;color:var(--text-dim);padding:6px 0;display:flex;align-items:center;gap:10px}
+.svc-features li::before{content:'';width:14px;height:14px;border-radius:50%;background:var(--gold-soft);border:1px solid var(--border-gold);flex-shrink:0;position:relative}
+.svc-features li::after{content:'';position:absolute;left:21px;top:50%;transform:translateY(-50%);width:4px;height:4px;border-radius:50%;background:var(--gold)}
+.svc-link{font-size:13px;font-weight:600;color:var(--gold);display:inline-flex;align-items:center;gap:6px;transition:gap 0.3s;letter-spacing:0.02em}
+.svc-link:hover{gap:12px}
+
+/* ============================================
+   PORTFOLIO CAROUSEL
+   ============================================ */
+.portfolio{padding:120px 0}
+.portfolio-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;flex-wrap:wrap;gap:24px}
+.portfolio-head-left{flex:1;min-width:300px}
+.carousel-wrap{position:relative;overflow:hidden;margin:0 -16px;padding:0 16px}
+.carousel-track{display:flex;gap:20px;transition:transform 0.7s var(--ease);will-change:transform}
+.port-card{flex:0 0 calc((100% - 40px) / 3);min-width:0;position:relative;border-radius:var(--radius-lg);overflow:hidden;cursor:pointer;group:port}
+.port-card img{width:100%;height:320px;object-fit:cover;transition:transform 0.8s var(--ease);filter:brightness(0.85)}
+.port-card:hover img{transform:scale(1.06);filter:brightness(1)}
+.port-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,10,12,0.95) 15%,rgba(10,10,12,0.1) 55%,transparent);display:flex;flex-direction:column;justify-content:flex-end;padding:28px;opacity:0;transition:opacity 0.4s}
+.port-card:hover .port-overlay{opacity:1}
+.port-tag{position:absolute;top:16px;left:16px;padding:6px 14px;border-radius:100px;background:rgba(184,150,46,0.95);color:#000;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase}
+.port-info h3{font-size:20px;font-weight:700;margin-bottom:4px;transform:translateY(12px);transition:transform 0.4s var(--ease)}
+.port-info p{font-size:13px;color:var(--text-dim);transform:translateY(12px);transition:transform 0.4s var(--ease) 0.05s}
+.port-card:hover .port-info h3,.port-card:hover .port-info p{transform:translateY(0)}
+.port-visit{margin-top:14px;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--gold);transform:translateY(12px);opacity:0;transition:all 0.4s var(--ease) 0.1s}
+.port-card:hover .port-visit{transform:translateY(0);opacity:1}
+
+/* Öz Kırım case study — alternating image/text layout */
+.case-study-list{display:flex;flex-direction:column;gap:92px}
+.case-row{display:grid;grid-template-columns:minmax(0,1.06fr) minmax(320px,.94fr);align-items:center;gap:clamp(42px,7vw,96px)}
+.case-row:nth-child(even) .case-media{order:2}
+.case-row:nth-child(even) .case-copy{order:1}
+.case-media{position:relative;overflow:hidden;border-radius:26px;background:var(--bg3);border:1px solid var(--border-gold);box-shadow:0 30px 80px rgba(0,0,0,.35)}
+.case-media::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(240,212,112,.08),transparent 40%);pointer-events:none}
+.case-media img{width:100%;height:clamp(410px,48vw,620px);object-fit:cover;transition:transform .8s var(--ease)}
+.case-row:hover .case-media img{transform:scale(1.025)}
+.case-copy{max-width:520px}
+.case-num{display:flex;align-items:center;gap:14px;margin-bottom:20px;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold)}
+.case-num::after{content:'';width:64px;height:1px;background:var(--border-gold)}
+.case-copy h3{font-size:clamp(30px,4vw,52px);margin-bottom:20px}
+.case-copy p{font-size:16px;color:var(--text-dim);line-height:1.85;margin-bottom:24px}
+.case-tags{display:flex;flex-wrap:wrap;gap:9px}
+.case-tags span{padding:8px 13px;border-radius:999px;border:1px solid var(--border-gold);background:var(--gold-soft);font-size:11px;color:var(--gold-light);letter-spacing:.04em}
+
+.carousel-ctrl{display:flex;align-items:center;justify-content:space-between;margin-top:40px}
+.carousel-dots{display:flex;gap:8px}
+.c-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,0.12);transition:all 0.4s;cursor:pointer}
+.c-dot.active{width:36px;border-radius:4px;background:var(--gold)}
+.carousel-arrows{display:flex;gap:10px}
+.c-arrow{width:48px;height:48px;border-radius:50%;background:var(--glass);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.4s var(--ease);color:var(--text-dim)}
+.c-arrow:hover{background:var(--gold);color:#000;border-color:var(--gold);transform:scale(1.05)}
+.c-arrow svg{width:18px;height:18px}
+
+/* ============================================
+   PRICING
+   ============================================ */
+.pricing{padding:120px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start}
+.price-card{padding:36px 32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--border);transition:all 0.5s var(--ease);position:relative}
+.price-card:hover{transform:translateY(-6px)}
+.price-card.featured{background:linear-gradient(135deg,rgba(184,150,46,0.08),rgba(255,255,255,0.01));border:1px solid var(--border-gold)}
+.price-card.featured::before{content:'';position:absolute;inset:-1px;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--gold-glow),transparent 60%);z-index:-1;opacity:0.5}
+.price-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);padding:6px 18px;border-radius:100px;background:var(--gold);color:#000;font-size:10px;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;white-space:nowrap}
+.price-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:700;margin-bottom:6px}
+.price-desc{font-size:14px;color:var(--text-dim);margin-bottom:28px}
+.price-amount{font-family:'Syne',sans-serif;font-size:44px;font-weight:700;margin-bottom:2px;letter-spacing:-0.03em}
+.price-period{font-size:13px;color:var(--text-faint);margin-bottom:28px}
+.price-features{list-style:none;padding:0;margin:0 0 32px}
+.price-features li{padding:10px 0;font-size:14px;color:var(--text-dim);display:flex;align-items:start;gap:10px;border-bottom:1px solid var(--border)}
+.price-features li:last-child{border-bottom:none}
+.price-features li svg{width:16px;height:16px;flex-shrink:0;margin-top:2px;color:var(--gold)}
+.price-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:15px;font-size:14px;font-weight:600;border-radius:100px;transition:all 0.4s var(--ease);letter-spacing:0.02em}
+.price-btn-gold{background:var(--gold);color:#000}
+.price-btn-gold:hover{background:var(--gold-bright);transform:translateY(-2px);box-shadow:0 8px 28px var(--gold-glow)}
+.price-btn-out{background:transparent;border:1px solid var(--border);color:var(--text)}
+.price-btn-out:hover{border-color:var(--gold);color:var(--gold)}
+
+/* ============================================
+   PROCESS
+   ============================================ */
+.process{padding:120px 0}
+.process-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;position:relative}
+.process-line{position:absolute;top:44px;left:12.5%;right:12.5%;height:1px;background:linear-gradient(90deg,transparent,var(--border-gold),transparent)}
+.process-step{text-align:left;position:relative}
+.process-step-num{font-family:'Syne',sans-serif;font-size:13px;font-weight:700;color:var(--gold);letter-spacing:0.1em;margin-bottom:16px}
+.process-icon{width:88px;height:88px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,255,255,0.04),rgba(255,255,255,0.01));border:1px solid var(--border);display:flex;align-items:center;justify-content:center;margin-bottom:24px;transition:all 0.4s var(--ease);position:relative}
+.process-step:hover .process-icon{border-color:var(--border-gold);transform:translateY(-4px)}
+.process-icon svg{width:36px;height:36px;color:var(--gold)}
+.process-step h3{font-size:18px;font-weight:700;margin-bottom:8px}
+.process-step p{font-size:14px;color:var(--text-dim);line-height:1.6}
+
+/* ============================================
+   TESTIMONIALS + BRAND REFS
+   ============================================ */
+.testimonials{padding:120px 0;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.test-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:72px}
+.test-card{padding:36px 32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--border);display:flex;flex-direction:column;transition:transform 0.4s var(--ease)}
+.test-card:hover{transform:translateY(-4px)}
+.test-mark{font-family:'Syne',sans-serif;font-size:48px;color:rgba(184,150,46,0.2);line-height:0.8;margin-bottom:16px}
+.test-text{font-size:15px;color:var(--text-dim);margin-bottom:28px;flex:1;line-height:1.7}
+.test-author{display:flex;align-items:center;gap:14px;padding-top:20px;border-top:1px solid var(--border)}
+.test-author img{width:48px;height:48px;border-radius:50%;object-fit:cover;filter:grayscale(0.15)}
+.test-author-name{font-size:15px;font-weight:600}
+.test-author-role{font-size:13px;color:var(--text-faint)}
+.test-stars{margin-left:auto;display:flex;gap:2px}
+.test-stars span{color:var(--gold);font-size:13px}
+
+/* Brand refs carousel */
+.brand-section{margin-top:0}
+.brand-label{text-align:center;font-size:11px;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-faint);margin-bottom:28px}
+.brand-carousel{position:relative;overflow:hidden;margin:0 -16px;padding:8px 16px}
+.brand-carousel::before,.brand-carousel::after{content:'';position:absolute;top:0;bottom:0;width:72px;z-index:2;pointer-events:none}
+.brand-carousel::before{left:0;background:linear-gradient(90deg,var(--bg2),transparent)}
+.brand-carousel::after{right:0;background:linear-gradient(270deg,var(--bg2),transparent)}
+.brand-track{display:flex;gap:16px;width:max-content;will-change:transform;animation:brandLoop 34s linear infinite}
+.brand-track:hover{animation-play-state:paused}
+@keyframes brandLoop{from{transform:translateX(0)}to{transform:translateX(calc(-50% - 8px))}}
+.brand-card{flex:0 0 180px;display:flex;flex-direction:column;align-items:center;gap:14px;padding:24px 16px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.01));border:1px solid var(--border);transition:all 0.4s var(--ease)}
+.brand-card:hover{border-color:var(--border-gold);transform:translateY(-4px)}
+.brand-card img{width:64px;height:64px;border-radius:50%;object-fit:cover;filter:grayscale(0.2);transition:filter 0.4s}
+.brand-card:hover img{filter:grayscale(0)}
+.brand-card span{font-size:13px;font-weight:600;color:var(--text)}
+.brand-card small{font-size:11px;color:var(--text-faint);letter-spacing:0.05em}
+
+/* ============================================
+   FAQ
+   ============================================ */
+.faq{padding:120px 0}
+.faq-wrap{max-width:760px;margin:0 auto}
+.faq-item{border-radius:var(--radius);overflow:hidden;margin-bottom:8px;background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));border:1px solid var(--border);transition:border-color 0.3s}
+.faq-item.open{border-color:var(--border-gold)}
+.faq-q{width:100%;display:flex;align-items:center;justify-content:space-between;padding:22px 28px;text-align:left;font-size:16px;font-weight:600;color:var(--text);font-family:'Inter',sans-serif}
+.faq-icon{width:32px;height:32px;border-radius:8px;background:var(--gold-soft);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;transition:all 0.4s var(--ease);flex-shrink:0;position:relative}
+.faq-icon::before,.faq-icon::after{content:'';position:absolute;background:var(--gold);border-radius:2px;transition:all 0.3s}
+.faq-icon::before{width:12px;height:2px}
+.faq-icon::after{width:2px;height:12px}
+.faq-item.open .faq-icon::after{transform:scaleY(0)}
+.faq-item.open .faq-icon{background:var(--gold)}
+.faq-item.open .faq-icon::before,.faq-item.open .faq-icon::after{background:#000}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.4s ease,opacity 0.3s;opacity:0}
+.faq-item.open .faq-a{max-height:300px;opacity:1}
+.faq-a p{padding:0 28px 22px;font-size:14px;color:var(--text-dim);line-height:1.7}
+
+/* ============================================
+   CTA
+   ============================================ */
+.cta{position:relative;overflow:hidden;padding:100px 0}
+.cta-inner{position:relative;text-align:center;max-width:680px;margin:0 auto;padding:0 32px}
+.cta-bg{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(184,150,46,0.12),transparent 60%)}
+.cta h2{font-size:clamp(36px,5vw,56px);font-weight:700;margin-bottom:20px;letter-spacing:-0.03em}
+.cta p{font-size:18px;color:var(--text-dim);margin-bottom:36px;line-height:1.6}
+.cta .btn-gold{padding:18px 40px;font-size:15px}
+
+/* ============================================
+   CONTACT
+   ============================================ */
+.contact{padding:120px 0;background:var(--bg2);border-top:1px solid var(--border)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.contact-info-list{display:flex;flex-direction:column;gap:12px;margin-bottom:28px}
+.contact-info-item{display:flex;align-items:center;gap:16px;padding:18px 20px;border-radius:var(--radius);background:linear-gradient(135deg,rgba(255,255,255,0.02),rgba(255,255,255,0.005));border:1px solid var(--border);transition:all 0.3s var(--ease)}
+.contact-info-item:hover{border-color:var(--border-gold);transform:translateX(4px)}
+.contact-info-icon{width:44px;height:44px;border-radius:12px;background:var(--gold-soft);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-info-icon svg{width:20px;height:20px;color:var(--gold)}
+.contact-info-text small{display:block;font-size:12px;color:var(--text-faint);letter-spacing:0.05em;text-transform:uppercase}
+.contact-info-text strong{font-size:15px;color:var(--text);font-weight:500}
+.contact-wa{padding:24px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(34,197,94,0.08),rgba(34,197,94,0.02));border:1px solid rgba(34,197,94,0.15)}
+.contact-wa h3{font-size:16px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+.contact-wa p{font-size:14px;color:var(--text-dim);margin-bottom:18px}
+.contact-wa-btn{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;font-size:14px;font-weight:600;color:#fff;background:#16a34a;border-radius:100px;transition:all 0.3s var(--ease)}
+.contact-wa-btn:hover{background:#22c55e;transform:translateY(-2px);box-shadow:0 8px 24px rgba(34,197,94,0.25)}
+.contact-form{padding:36px 32px;border-radius:var(--radius-lg);background:linear-gradient(135deg,rgba(255,255,255,0.03),rgba(255,255,255,0.005));border:1px solid var(--border)}
+.form-group{margin-bottom:20px}
+.form-label{display:block;font-size:13px;font-weight:500;color:var(--text-dim);margin-bottom:8px;letter-spacing:0.02em}
+.form-input{width:100%;padding:14px 18px;border-radius:var(--radius);background:rgba(255,255,255,0.03);border:1px solid var(--border);color:var(--text);font-size:15px;font-family:inherit;outline:none;transition:all 0.3s}
+.form-input:focus{border-color:var(--gold);background:rgba(255,255,255,0.05);box-shadow:0 0 0 3px var(--gold-soft)}
+.form-input::placeholder{color:var(--text-faint)}
+textarea.form-input{resize:vertical;min-height:120px}
+.form-success{text-align:center;padding:48px 16px;animation:scaleIn 0.5s var(--ease)}
+.form-success-icon{width:64px;height:64px;border-radius:50%;background:var(--gold-soft);border:2px solid var(--border-gold);display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.form-success-icon svg{width:28px;height:28px;color:var(--gold)}
+.form-success h3{font-size:22px;font-weight:700;margin-bottom:8px}
+.form-success p{font-size:14px;color:var(--text-dim)}
+@keyframes scaleIn{from{opacity:0;transform:scale(0.95)}to{opacity:1;transform:scale(1)}}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.footer{padding:80px 0 32px}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 2fr;gap:48px;margin-bottom:48px}
+.footer-logo{display:flex;align-items:center;gap:12px;font-family:'Syne',sans-serif;font-size:22px;font-weight:800;margin-bottom:16px}
+.footer-logo-mark{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--gold-bright),var(--gold-dark));display:flex;align-items:center;justify-content:center}
+.footer-logo-mark svg{width:18px;height:18px}
+.footer-logo span{color:var(--gold)}
+.footer-logo small{display:block;font-size:7px;letter-spacing:0.25em;text-transform:uppercase;color:var(--text-faint);font-weight:600;font-family:'Inter',sans-serif}
+.footer-logo .business-logo{width:100px;height:100px}
+.footer-desc{font-size:14px;color:var(--text-dim);max-width:280px;margin-bottom:24px;line-height:1.7}
+.footer-social{display:flex;gap:10px}
+.footer-social a{width:40px;height:40px;border-radius:10px;background:var(--glass);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;transition:all 0.3s}
+.footer-social a:hover{background:var(--gold);border-color:var(--gold);transform:translateY(-3px)}
+.footer-social a svg{width:18px;height:18px;color:var(--text-dim);transition:color 0.3s}
+.footer-social a:hover svg{color:#000}
+.footer-col h4{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.15em;color:var(--text);margin-bottom:18px}
+.footer-col ul{list-style:none;padding:0}
+.footer-col li{margin-bottom:12px}
+.footer-col a{font-size:14px;color:var(--text-dim);transition:color 0.3s}
+.footer-col a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:32px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.footer-copy{font-size:12px;color:var(--text-faint)}
+.footer-tag{font-size:11px;color:var(--text-faint);font-family:'Syne',sans-serif;letter-spacing:0.15em;text-transform:uppercase}
+
+/* ============================================
+   WHATSAPP FLOAT
+   ============================================ */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:90;width:56px;height:56px;border-radius:50%;background:#16a34a;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(22,163,74,0.35);transition:all 0.3s var(--ease);cursor:pointer}
+.wa-float:hover{background:#22c55e;transform:scale(1.08)}
+.wa-float svg{width:28px;height:28px;fill:#fff}
+.wa-float::before{content:'';position:absolute;top:-2px;right:-2px;width:12px;height:12px;border-radius:50%;background:#ef4444;border:2px solid var(--bg);animation:waPulse 2s ease-in-out infinite}
+@keyframes waPulse{0%,100%{opacity:1}50%{opacity:0.3}}
+.wa-popup{position:fixed;bottom:100px;right:28px;z-index:91;width:300px;background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;box-shadow:0 20px 60px rgba(0,0,0,0.5);transform:translateY(20px) scale(0.95);opacity:0;visibility:hidden;transition:all 0.4s var(--ease)}
+.wa-popup.open{transform:translateY(0) scale(1);opacity:1;visibility:visible}
+.wa-popup-header{background:#16a34a;padding:18px;display:flex;align-items:center;gap:14px}
+.wa-popup-header .wa-ava{width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center}
+.wa-popup-header .wa-ava svg{width:22px;height:22px;fill:#fff}
+.wa-popup-header h4{font-size:15px;font-weight:700;color:#fff}
+.wa-popup-header p{font-size:12px;color:rgba(255,255,255,0.8)}
+.wa-popup-body{padding:20px}
+.wa-popup-body p{font-size:14px;color:var(--text-dim);margin-bottom:16px;line-height:1.6}
+.wa-popup-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:13px;font-size:14px;font-weight:600;color:#fff;background:#16a34a;border-radius:100px;transition:all 0.3s}
+.wa-popup-btn:hover{background:#22c55e;transform:scale(1.02)}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media(max-width:1024px){
+  .hero-content{grid-template-columns:1fr;gap:40px}
+  .hero-visual{max-width:520px;margin:0 auto}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
+  .stat{border-right:none;border-bottom:1px solid var(--border);padding-bottom:24px;margin-bottom:24px}
+  .stat:nth-child(3),.stat:nth-child(4){border-bottom:none;padding-bottom:0;margin-bottom:0}
+  .services-grid,.pricing-grid,.test-grid{grid-template-columns:repeat(2,1fr)}
+  .process-grid{grid-template-columns:repeat(2,1fr)}
+  .process-line{display:none}
+  .footer-grid{grid-template-columns:repeat(2,1fr)}
+  .port-card{flex:0 0 calc((100% - 20px) / 2)}
+  .brand-card{flex:0 0 150px}
+  .case-row{gap:46px}
+}
+@media(max-width:768px){
+  .brand-track{animation-duration:26s}
+  .nav-links{display:none}
+  .nav-burger{display:flex}
+  .section{padding:80px 0}
+  .stats-grid,.services-grid,.pricing-grid,.test-grid,.process-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+  .price-card.featured{transform:none}
+  .hero{padding-top:80px}
+  .hero h1{font-size:40px}
+  .port-card{flex:0 0 100%}
+  .brand-card{flex:0 0 130px}
+  .container{padding:0 20px}
+  .nav-inner{padding:0 20px}
+  .case-study-list{gap:64px}
+  .case-row{grid-template-columns:1fr;gap:26px}
+  .case-row:nth-child(even) .case-media,.case-row:nth-child(even) .case-copy{order:initial}
+  .case-media img{height:min(125vw,580px)}
+  .case-copy{max-width:none}
+  .case-copy h3{font-size:32px}
+  .case-copy p{font-size:15px}
+}
+
+.form-check{display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--text-dim);line-height:1.5;margin:4px 0 20px}
+.form-check input{margin-top:3px;accent-color:var(--gold)}
+.form-note{font-size:12px;color:var(--text-faint);margin-top:12px;text-align:center}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:2px solid var(--gold-bright);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+</style>
+</head>
+<body>
+
+<!-- Noise overlay -->
+<div class="noise"></div>
+
+<!-- Loader -->
+<div id="loader">
+  <div class="loader-mark">ÖZKIRIM<span>TATAR</span></div>
+  <div class="loader-bar-wrap"><div class="loader-bar"></div></div>
+  <div class="loader-text">KIRIM’DAN SOFRANIZA</div>
+</div>
+
+<!-- Cursor -->
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
+<!-- Navbar -->
+<nav class="navbar" id="navbar">
+  <div class="nav-inner">
+    <a href="#portfolio" class="nav-logo" aria-label="Öz Kırım ana sayfa">
+      <img class="business-logo" src="assets/oz-kirim/oz-kirim-logo.webp" alt="Öz Kırım Tatar Çibörek ve Mantı Evi logosu">
+    </a>
+    <div class="nav-links">
+      <a href="#portfolio" class="nav-link">Menü</a>
+      <a href="fiyat-listesi.html" class="nav-link">Fiyat Listesi</a>
+      <a href="#contact" class="nav-link">İletişim</a>
+      <a href="#contact" class="nav-cta">İletişim</a>
+    </div>
+    <button class="nav-burger" id="navBurger" type="button" aria-label="Mobil menüyü aç" aria-controls="navMobile" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile" aria-hidden="true">
+    <a href="#portfolio">Lezzetlerimiz</a>
+    <a href="fiyat-listesi.html">Fiyat Listesi</a>
+    <a href="#contact">İletişim</a>
+    <a href="#contact" style="color:var(--gold);font-weight:600">Hemen Başla</a>
+  </div>
+</nav>
+
+
+<!-- Öz Kırım Case Study -->
+<section class="portfolio" id="portfolio">
+  <div class="container">
+    <div class="portfolio-head">
+      <div class="portfolio-head-left reveal">
+        <div class="eyebrow">Marka Hikâyesi</div>
+        <h2 class="sec-title">Öz Kırım'ın <span class="gold-grad">lezzet dünyası</span></h2>
+        <p class="sec-sub">Kırım Tatar mutfağının samimiyetini; sıcak, iştah açıcı ve gerçek mekân kareleriyle dijital dünyaya taşıdık.</p>
+      </div>
+    </div>
+    <div class="case-study-list">
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/ciborek-sos-yakin-plan.webp" alt="Öz Kırım çiböreğinin yoğurtlu sosa batırıldığı yakın plan" loading="lazy"></div><div class="case-copy"><div class="case-num">01 · İmza Lezzet</div><h3>Dışı çıtır, içi bol lezzetli</h3><p>İncecik açılan hamur, özenle hazırlanan kıymalı harç ve tam kararında kızaran yüzey… Öz Kırım'ın çiböreği ilk ısırıktan itibaren gerçek Kırım Tatar mutfağını hissettirir.</p><div class="case-tags"><span>El Açması</span><span>Günlük Üretim</span><span>Çibörek</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/oz-kirim-mekan-dis-cephe.webp" alt="Öz Kırım Tatar Çibörek ve Mantı Evi dış cephesi" loading="lazy"></div><div class="case-copy"><div class="case-num">02 · Mekân</div><h3>Eskişehir'in sıcak bir köşesi</h3><p>Geleneksel mutfağın samimiyetini taşıyan Öz Kırım, misafirlerini sade ve içten bir ortamda karşılıyor. Burası yalnızca yemek yenilen değil, sofrada güzel anıların biriktiği bir yer.</p><div class="case-tags"><span>Eskişehir</span><span>Aile Ortamı</span><span>Geleneksel</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/ciborek-tabagi.webp" alt="Yeni pişmiş çıtır çiböreklerin tabakta sunumu" loading="lazy"></div><div class="case-copy"><div class="case-num">03 · Ustalık</div><h3>Her porsiyonda aynı özen</h3><p>Altın rengini alan çıtır çibörekler siparişle hazırlanır ve sıcak servis edilir. Geleneksel tarif, iyi malzeme ve yılların mutfak tecrübesi her tabakta bir araya gelir.</p><div class="case-tags"><span>Sıcak Servis</span><span>Usta İşi</span><span>Taze</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/ciborek-musteri-deneyimi.webp" alt="Öz Kırım'da çibörek yiyen mutlu misafir" loading="lazy"></div><div class="case-copy"><div class="case-num">04 · Deneyim</div><h3>Lezzetin en güzel hâli: paylaşmak</h3><p>Öz Kırım sofrası, yalnızca yöresel tatları değil samimi sohbetleri de buluşturur. Rahat atmosferi ve içten hizmetiyle her ziyaret, yeniden gelme isteği bırakır.</p><div class="case-tags"><span>Samimi</span><span>Misafirperverlik</span><span>Keyifli Sofra</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/ciborek-servis-tabagi.webp" alt="Çibörek, turşu, ayran ve soslarla hazırlanan servis tabağı" loading="lazy"></div><div class="case-copy"><div class="case-num">05 · Sunum</div><h3>Tamamlayıcı tatlarla zengin servis</h3><p>Çibörek; ferah ayran, yoğurtlu sos ve turşu eşliğinde dengeli bir öğüne dönüşür. Masaya gelen her detay, ana lezzeti daha güçlü hissettirmek için seçilir.</p><div class="case-tags"><span>Ayran</span><span>Yoğurtlu Sos</span><span>Turşu</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/manti-ustten-gorunum.webp" alt="Yoğurt ve baharatla servis edilen Öz Kırım mantısı" loading="lazy"></div><div class="case-copy"><div class="case-num">06 · Mantı</div><h3>Yoğurt ve baharatla tamamlanan klasik</h3><p>Özenle kapatılan mantılar; sarımsaklı yoğurt, tereyağı ve baharatlarla servis edilir. Her kaşıkta ev yapımı lezzetin tanıdık sıcaklığı hissedilir.</p><div class="case-tags"><span>Ev Yapımı</span><span>Mantı</span><span>Sarımsaklı Yoğurt</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/zeytinyagli-sarma-sunumu.webp" alt="Limonla servis edilen zeytinyağlı yaprak sarma tabakları" loading="lazy"></div><div class="case-copy"><div class="case-num">07 · Sofra</div><h3>Geleneksel sofranın sevilen eşlikçisi</h3><p>İnce sarılmış zeytinyağlı yaprak sarmalar, taze limon dokunuşuyla hafif ve dengeli bir başlangıç sunar. Paylaşımlı sofralara yakışan tanıdık bir lezzet.</p><div class="case-tags"><span>Zeytinyağlı</span><span>Yaprak Sarma</span><span>Başlangıç</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/katmer-tatli-sunumu.webp" alt="Öz Kırım katmer tatlısının tabakta sunumu" loading="lazy"></div><div class="case-copy"><div class="case-num">08 · Tatlı</div><h3>Sofranın çıtır finali</h3><p>Kat kat açılan hamuru ve dengeli şerbetiyle hazırlanan katmer, yemeğin ardından hafif ama unutulmaz bir final sunar. Çayla birlikte geleneksel keyif tamamlanır.</p><div class="case-tags"><span>Katmer</span><span>Çıtır</span><span>Çay Saati</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/katmer-cay-sunumu.webp" alt="Çay eşliğinde paylaşılan katmer tatlısı" loading="lazy"></div><div class="case-copy"><div class="case-num">09 · Birlikte</div><h3>Çay, tatlı ve uzun sohbetler</h3><p>Öz Kırım'da tatlı yalnızca bir ikram değil, sofradaki sohbeti uzatan küçük bir ritüeldir. Sıcacık çay eşliğinde her lokma daha güzel paylaşılır.</p><div class="case-tags"><span>Çay</span><span>Paylaşım</span><span>Sohbet</span></div></div></article>
+      <article class="case-row reveal"><div class="case-media"><img src="assets/oz-kirim/katmer-yakin-plan.webp" alt="Cevizli katmer tatlısının yakın plan görüntüsü" loading="lazy"></div><div class="case-copy"><div class="case-num">10 · Detay</div><h3>Her katında emek var</h3><p>İncecik hamur katları, bol ceviz ve ölçülü şerbet bir araya gelir. Yakından bakıldığında bile ustalığını gösteren bu tatlı, geleneksel tarifin zarif bir yorumu.</p><div class="case-tags"><span>Ceviz</span><span>El Emeği</span><span>Geleneksel Tatlı</span></div></div></article>
+    </div>
+  </div>
+</section>
+<!-- Contact -->
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="reveal" style="margin-bottom:56px">
+      <div class="eyebrow">İletişim</div>
+      <h2 class="sec-title">Bize <span class="gold-grad">ulaşın</span></h2>
+      <p class="sec-sub">Sorularınız, projeleriniz veya iş birlikleri için bize ulaşın.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="reveal">
+        <div class="contact-info-list">
+          <a class="contact-info-item" href="mailto:ozkirimtatarciborek@gmail.com" aria-label="E-posta gönder">
+            <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none"><rect x="2" y="4" width="20" height="16" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M22 7l-10 5L2 7" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="contact-info-text"><small>E-posta</small><strong>ozkirimtatarciborek@gmail.com</strong></div>
+          </a>
+          <a class="contact-info-item" href="tel:+902222216414" aria-label="Telefonla ara">
+            <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="contact-info-text"><small>Telefon</small><strong>0 222 221 64 14</strong></div>
+          </a>
+          <a class="contact-info-item" href="https://www.google.com/maps/place/%C3%96z+K%C4%B1r%C4%B1m+Tatar+%C3%87ib%C3%B6rek+ve+Mant%C4%B1+Evi/@39.7645465,30.5247457,17z/data=!3m1!4b1!4m6!3m5!1s0x14cc17bb458fda69:0xc840396fdad8252d!8m2!3d39.7645465!4d30.5247457!16s%2Fg%2F11rqv6t5k8?entry=ttu&amp;g_ep=EgoyMDI2MDgyNi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Google Maps konumunu aç">
+            <div class="contact-info-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg></div>
+            <div class="contact-info-text"><small>Adres</small><strong>Paşa Mah., Beyler Sk. No:3, Odunpazarı / Eskişehir</strong></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo"><img class="business-logo" src="assets/oz-kirim/oz-kirim-logo.webp" alt="Öz Kırım Tatar Çibörek ve Mantı Evi logosu"></div>
+        <p class="footer-desc">Eskişehir'in kalbinde Kırım Tatar mutfağının geleneksel lezzetlerini yaşatıyoruz. El emeği mantımızı ve çıtır çiböreğimizi özenle hazırlıyor, misafirlerimizi sıcak bir aile ortamında ağırlıyoruz.</p>
+        <a href="mailto:ozkirimtatarciborek@gmail.com" class="svc-link" aria-label="E-posta gönder">E-posta Gönder →</a>
+      </div>
+      <div class="footer-col"><h4>Lezzetlerimiz</h4><ul><li><a href="fiyat-listesi.html">Çibörek</a></li><li><a href="fiyat-listesi.html">Mantı</a></li><li><a href="fiyat-listesi.html">Yaprak Sarma</a></li><li><a href="fiyat-listesi.html">Kırım Baklavası</a></li></ul></div>
+      <div class="footer-col"><h4>Keşfedin</h4><ul><li><a href="#portfolio">Hikâyemiz</a></li><li><a href="fiyat-listesi.html">Fiyat Listesi</a></li><li><a href="#contact">İletişim</a></li></ul></div>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">©<span id="currentYear">2026</span> Öz Kırım Tatar Çibörek ve Mantı Evi. Tüm hakları saklıdır.</div>
+      <div class="footer-tag">Gelenek · Emek · Lezzet</div>
+    </div>
+  </div>
+</section>
+
+<script>
+// LOADER
+window.addEventListener('load',function(){setTimeout(function(){document.getElementById('loader').classList.add('done')},1400)});
+
+// CURSOR
+(function(){
+  if(window.matchMedia('(hover: none)').matches)return;
+  document.body.style.cursor='none';
+  var dot=document.getElementById('cursorDot'),ring=document.getElementById('cursorRing');
+  var mx=0,my=0,rx=0,ry=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.transform='translate('+(mx-3)+'px,'+(my-3)+'px)'});
+  function anim(){rx+=(mx-rx)*0.16;ry+=(my-ry)*0.16;ring.style.transform='translate('+(rx-16)+'px,'+(ry-16)+'px)';requestAnimationFrame(anim)}
+  anim();
+  document.addEventListener('mouseover',function(e){if(e.target.closest('a,button,[data-cursor]'))document.body.classList.add('cursor-hovering')});
+  document.addEventListener('mouseout',function(e){if(e.target.closest('a,button,[data-cursor]'))document.body.classList.remove('cursor-hovering')});
+})();
+
+// NAVBAR
+window.addEventListener('scroll',function(){var n=document.getElementById('navbar');if(window.scrollY>30)n.classList.add('scrolled');else n.classList.remove('scrolled')});
+
+// MOBILE MENU
+var burger=document.getElementById('navBurger'),mobile=document.getElementById('navMobile');
+burger.addEventListener('click',function(){var open=burger.classList.toggle('open');mobile.classList.toggle('open',open);burger.setAttribute('aria-expanded',String(open));burger.setAttribute('aria-label',open?'Mobil menüyü kapat':'Mobil menüyü aç');mobile.setAttribute('aria-hidden',String(!open))});
+mobile.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){burger.classList.remove('open');mobile.classList.remove('open');burger.setAttribute('aria-expanded','false');burger.setAttribute('aria-label','Mobil menüyü aç');mobile.setAttribute('aria-hidden','true')})});
+
+// ACTIVE NAV
+var sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-link');
+window.addEventListener('scroll',function(){
+  var s=window.scrollY+100;
+  sections.forEach(function(sec){if(s>=sec.offsetTop&&s<sec.offsetTop+sec.offsetHeight){navLinks.forEach(function(l){l.classList.remove('active')});var a=document.querySelector('.nav-link[href="#'+sec.id+'"]');if(a)a.classList.add('active')}})
+});
+
+// REVEAL
+var revealObserver=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('visible');revealObserver.unobserve(e.target)}})},{threshold:0.12,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.reveal').forEach(function(el){revealObserver.observe(el)});
+
+// COUNTER
+var counterObserver=new IntersectionObserver(function(entries){entries.forEach(function(e){if(!e.isIntersecting)return;var el=e.target,t=parseInt(el.dataset.count),s=el.dataset.suffix||'',c=0,st=Math.ceil(t/40),tm=setInterval(function(){c+=st;if(c>=t){c=t;clearInterval(tm)}el.textContent=c+s},30);counterObserver.unobserve(el)})},{threshold:0.5});
+document.querySelectorAll('[data-count]').forEach(function(el){counterObserver.observe(el)});
+
+// FAQ
+function toggleFaq(btn){var item=btn.parentElement,open=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(f){f.classList.remove('open')});if(!open)item.classList.add('open')}
+
+// CONTACT FORM
+document.getElementById('contactForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!this.reportValidity())return;
+  var name=document.getElementById('cName').value.trim(),phone=document.getElementById('cPhone').value.trim(),email=document.getElementById('cEmail').value.trim(),service=document.getElementById('cService').value,message=document.getElementById('cMessage').value.trim();
+  var text='Merhaba ONAÇ Web,%0A%0AAd Soyad: '+encodeURIComponent(name)+'%0ATelefon: '+encodeURIComponent(phone)+'%0AE-posta: '+encodeURIComponent(email)+'%0AHizmet / Paket: '+encodeURIComponent(service)+'%0A%0AProje Detayı:%0A'+encodeURIComponent(message);
+  window.open('https://wa.me/905010842641?text='+text,'_blank','noopener');
+});
+
+document.querySelectorAll('[data-package]').forEach(function(btn){btn.addEventListener('click',function(){var select=document.getElementById('cService');select.value=this.dataset.package+' Paket';setTimeout(function(){select.focus()},500)})});
+document.getElementById('currentYear').textContent=new Date().getFullYear();
+
+// BRAND REFERENCES — SEAMLESS INFINITE LOOP
+(function(){
+  var track=document.getElementById('brandTrack');
+  if(!track||track.dataset.loopReady==='true')return;
+  var originals=Array.from(track.children);
+  originals.forEach(function(card){
+    var clone=card.cloneNode(true);
+    clone.setAttribute('aria-hidden','true');
+    track.appendChild(clone);
+  });
+  track.dataset.loopReady='true';
+})();
+
+// CAROUSELS
+var carousels={};
+function initCarousel(id,trackId,dotsId){
+  var track=document.getElementById(trackId),dotsWrap=document.getElementById(dotsId);
+  if(!track||!dotsWrap)return;
+  var cards=track.children,total=cards.length;
+  var perView=window.innerWidth<=768?1:window.innerWidth<=1024?2:3;
+  var maxIndex=Math.max(0,Math.ceil(total/perView)-1);
+  carousels[id]={track:track,cards:cards,total:total,perView:perView,maxIndex:maxIndex,current:0,dotsWrap:dotsWrap};
+  dotsWrap.innerHTML='';
+  for(var i=0;i<=maxIndex;i++){(function(i){var d=document.createElement('div');d.className='c-dot'+(i===0?' active':'');d.addEventListener('click',function(){cGo(id,i)});dotsWrap.appendChild(d)})(i)}
+  updateCarousel(id);
+}
+function updateCarousel(id){
+  var c=carousels[id],cw=c.cards[0].getBoundingClientRect().width,gap=20,off=c.current*(cw+gap)*c.perView;
+  c.track.style.transform='translateX(-'+off+'px)';
+  c.dotsWrap.querySelectorAll('.c-dot').forEach(function(d,i){d.classList.toggle('active',i===c.current)})
+}
+function cMove(id,dir){var c=carousels[id];c.current+=dir;if(c.current>c.maxIndex)c.current=0;if(c.current<0)c.current=c.maxIndex;updateCarousel(id)}
+function cGo(id,idx){carousels[id].current=idx;updateCarousel(id)}
+
+window.addEventListener('load',function(){initCarousel('portfolio','portfolioTrack','portfolioDots')});
+window.addEventListener('resize',function(){initCarousel('portfolio','portfolioTrack','portfolioDots')});
+
+// AUTO CAROUSEL
+setInterval(function(){var c=carousels.portfolio;if(!c)return;c.current++;if(c.current>c.maxIndex)c.current=0;updateCarousel('portfolio')},4500);
+
+// WHATSAPP
+var waPopup=document.getElementById('waPopup'),waFloat=document.getElementById('waFloat'),waOpen=false;
+function toggleWaPopup(){waOpen=!waOpen;waPopup.classList.toggle('open',waOpen);waFloat.setAttribute('aria-expanded',String(waOpen));waFloat.setAttribute('aria-label',waOpen?'WhatsApp iletişim penceresini kapat':'WhatsApp iletişim penceresini aç')}
+setTimeout(function(){if(!waOpen){waOpen=true;waPopup.classList.add('open')}},5000);
+document.addEventListener('click',function(e){if(waOpen&&!waPopup.contains(e.target)&&!waFloat.contains(e.target)){waOpen=false;waPopup.classList.remove('open')}});
+</script>
+</body>
+</html>
